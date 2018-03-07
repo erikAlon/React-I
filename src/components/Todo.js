@@ -8,17 +8,28 @@ class Todo extends Component {
         };
     }
 
+    /*Methods*/
+
     handleClick = () => {
         this.setState({ clicked: !this.state.clicked });
     }
 
+    handleXClick = () => {
+
+    }
+
+    /*/Methods*/
+
     render() {
-        console.log('props: ', this.props)
-        const myStyles = this.state.clicked ? { textDecoration: 'line-through' } : { textDecoration: 'none' };
+        const styles = this.state.clicked ? { textDecoration: 'line-through' } : { textDecoration: 'none' };
         return (
-            <div style={myStyles} onClick={this.handleClick}>{this.props.thing}</div>
-        )
+            <div>
+                <div style={styles} onClick={this.handleClick}>{this.props.pItem}</div>
+            </div>
+        );
     }
 }
 
 export default Todo;
+
+// from this component's POV, props are items
